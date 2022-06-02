@@ -9,4 +9,6 @@ public interface DataScanner {
 
     public DataScanner configure();
     public HashMap<String, List<Candlestick>> scanData() throws Exception;
+
+    void waitForNextRequestMoment() throws InterruptedException;
 }

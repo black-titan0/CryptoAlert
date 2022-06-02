@@ -43,9 +43,16 @@ public class BinanceDataScanner implements DataScanner{
         }
         HashMap <String, List<Candlestick>> marketData = new HashMap<>();
         for (String marketName: markets) {
-            List<Candlestick> candlesticks = restClient.getCandlestickBars(marketName, CandlestickInterval.ONE_MINUTE);
+            long time = restClient.getServerTime();
+            List<Candlestick> candlesticks = restClient.getCandlestickBars(marketName, CandlestickInterval.ONE_MINUTE,
+                    waitTime/60000, time - waitTime, time);
             marketData.put(marketName, candlesticks);
         }
         return marketData;
+    }
+
+    @Override
+    public void waitForNextRequestMoment() throws InterruptedException {
+        Thread.sleep(waitTime);
     }
 }
