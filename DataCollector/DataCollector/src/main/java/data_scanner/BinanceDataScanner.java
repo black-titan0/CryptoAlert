@@ -6,9 +6,7 @@ import com.binance.api.client.domain.market.Candlestick;
 import com.binance.api.client.domain.market.CandlestickInterval;
 import properties_reader.PropertiesReader;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class BinanceDataScanner implements DataScanner{
 
@@ -37,15 +35,15 @@ public class BinanceDataScanner implements DataScanner{
 
 
     @Override
-    public HashMap<String, List<Candlestick>> scanData() throws Exception {
+    public HashMap<String, List<Object>> scanData() throws Exception {
         if (restClient == null){
             throw new Exception("DataScanner: usage before configuration");
         }
-        HashMap <String, List<Candlestick>> marketData = new HashMap<>();
+        HashMap <String, List<Object>> marketData = new HashMap<>();
         for (String marketName: markets) {
             long time = restClient.getServerTime();
-            List<Candlestick> candlesticks = restClient.getCandlestickBars(marketName, CandlestickInterval.ONE_MINUTE,
-                    waitTime/60000, time - waitTime, time);
+            List<Object> candlesticks = new ArrayList<>(restClient.getCandlestickBars(marketName, CandlestickInterval.ONE_MINUTE,
+                    waitTime / 60000, time - waitTime, time));
             marketData.put(marketName, candlesticks);
         }
         return marketData;
