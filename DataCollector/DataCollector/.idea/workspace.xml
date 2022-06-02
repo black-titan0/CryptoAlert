@@ -68,7 +68,7 @@
       <updated>1653895412476</updated>
       <workItem from="1653895415469" duration="684000" />
       <workItem from="1653916158400" duration="10188000" />
-      <workItem from="1654099032810" duration="11942000" />
+      <workItem from="1654099032810" duration="16590000" />
     </task>
     <servers />
   </component>
@@ -85,21 +85,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/data_scanner/BinanceDataScanner.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/properties_reader/PropertiesReader.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

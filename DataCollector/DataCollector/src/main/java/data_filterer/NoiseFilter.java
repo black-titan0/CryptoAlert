@@ -9,9 +9,7 @@ public class NoiseFilter implements DataFilter{
     @Override
     public List<Object> filter(List<Object> dataList) {
         ArrayList<Object> newDataList = new ArrayList<>(dataList);
-        for (Object datum:newDataList)
-            if (!isValid(datum))
-                newDataList.remove(datum);
+        newDataList.removeIf(datum -> !isValid(datum));
         return newDataList;
     }
 

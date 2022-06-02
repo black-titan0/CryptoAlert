@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface DataScanner {
 
-    public DataScanner configure();
-    public HashMap<String, List<Object>> scanData() throws Exception;
+    DataScanner configure();
+    HashMap<String, List<Object>> scanData() throws Exception;
 
     void waitForNextRequestMoment() throws InterruptedException;
 }
