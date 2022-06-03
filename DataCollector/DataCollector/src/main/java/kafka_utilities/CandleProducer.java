@@ -23,7 +23,9 @@ public class CandleProducer {
     }
 
     public void publishMultipleCandles(String topic, List<String> candleData){
-        for (String datum : candleData)
+        for (String datum : candleData) {
             publishCandle(topic, datum);
+            System.out.println(datum);
+        }
     }
 }

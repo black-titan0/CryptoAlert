@@ -12,7 +12,7 @@ import java.util.List;
 
 public class CollectorRunner {
     boolean isRunning = true;
-    public void Run() throws Exception {
+    public void run() throws Exception {
         PropertiesReader propertiesReader = new PropertiesReader();
         String host = propertiesReader.readFromConfig("kafka_host", "data_collector_config");
         int port = Integer.parseInt(propertiesReader.readFromConfig("kafka_port", "data_collector_config"));
@@ -33,7 +33,7 @@ public class CollectorRunner {
         }
     }
 
-    public void Stop(){
+    public void stop(){
         isRunning = false;
     }
 }
