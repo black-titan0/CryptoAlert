@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c8d148a3-b2e8-4c76-93ed-ec0e7a0b7b11" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../DataCollector/DataCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DataCollector/DataCollector/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DataCollector/DataCollector/src/main/java/CollectorRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DataCollector/DataCollector/src/main/java/CollectorRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DataCollector/DataCollector/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DataCollector/DataCollector/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DataCollector/DataCollector/src/main/java/kafka_utilities/CandleProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DataCollector/DataCollector/src/main/java/kafka_utilities/CandleProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DataCollector/DataCollector/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../DataCollector/DataCollector/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DataCollector/DataCollector/target/classes/config/data_collector_config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../DataCollector/DataCollector/target/classes/config/data_collector_config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,6 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/media/black-titan/ddc7c516-e19c-49a2-ad5b-bfd65828f03d/Projects/Sahab/CryptoAlert/RuleEvaluator/RuleEvaluator/src/main/resources/rules",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,7 +45,11 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/rules" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/rules" />
       <recent name="$PROJECT_DIR$/src/main/resources/config" />
     </key>
   </component>
@@ -75,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654242260674</updated>
-      <workItem from="1654242262312" duration="5020000" />
+      <workItem from="1654242262312" duration="12587000" />
     </task>
     <servers />
   </component>
@@ -92,5 +92,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/rule_utilities/YamlRuleParser.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

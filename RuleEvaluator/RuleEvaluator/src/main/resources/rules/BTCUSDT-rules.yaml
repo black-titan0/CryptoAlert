@@ -1,0 +1,10 @@
+rule1:
+  stat1:
+    ref: close
+    time: 30d
+    operator: mean
+  stat2:
+    ref: close
+    time: 7d
+    operator: mean
+  cond: stat1 > stat2

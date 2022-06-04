@@ -1,4 +1,5 @@
 import consume_procedures.ConsumeProcedure;
+import consume_procedures.DataRepoProcedure;
 import consume_procedures.PrintProcedure;
 import kafka_utilities.CandleConsumer;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -22,7 +23,7 @@ public class EvaluatorRunner {
                     , marketName + "ConsumerGroup"
                     , port,
                     marketName);
-            ConsumeProcedure procedure = new PrintProcedure().introduceConsumer(candleConsumer);
+            ConsumeProcedure procedure = new DataRepoProcedure().introduceConsumer(candleConsumer, marketName);
             new Thread(procedure).start();
         }
     }
