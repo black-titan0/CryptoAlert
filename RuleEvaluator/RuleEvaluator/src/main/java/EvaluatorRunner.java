@@ -1,13 +1,11 @@
 import consume_procedures.ConsumeProcedure;
 import consume_procedures.DataRepoProcedure;
-import consume_procedures.PrintProcedure;
 import kafka_utilities.CandleConsumer;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
+
 import properties_reader.PropertiesReader;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.time.Duration;
 
 public class EvaluatorRunner {
     public void run() throws UnknownHostException {

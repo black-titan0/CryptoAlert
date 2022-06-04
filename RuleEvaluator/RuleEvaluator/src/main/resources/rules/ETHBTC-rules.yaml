@@ -1,10 +1,10 @@
-rule1:
+eth-rule1:
   stat1:
     ref: open
-    time: 3d
+    time: 3m
     operator: mean
   stat2:
     ref: open
-    time: 7d
+    time: 2m
     operator: mean
   cond: stat1 < stat2

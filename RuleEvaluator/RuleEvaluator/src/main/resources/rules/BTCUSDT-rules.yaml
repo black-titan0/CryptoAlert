@@ -1,4 +1,4 @@
-rule1:
+btc-rule1:
   stat1:
     ref: close
     time: 30d

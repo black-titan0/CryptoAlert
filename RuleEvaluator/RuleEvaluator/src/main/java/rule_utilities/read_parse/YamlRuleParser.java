@@ -1,16 +1,15 @@
-package rule_utilities;
+package rule_utilities.read_parse;
 
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class YamlRuleParser implements RuleParser{
+public class YamlRuleParser implements RuleParser {
     @Override
     public Set<String>  getRuleNames(Object rules) {
         Map<String, Object> yamlRuleMap = ((Map<String, Object> ) rules);
-        Set<String> keys = yamlRuleMap.keySet();
-        return keys;
+        return yamlRuleMap.keySet();
     }
 
     @Override
@@ -21,14 +20,14 @@ public class YamlRuleParser implements RuleParser{
                 continue;
             Map<String, Object> yamlStatMap = (Map<String, Object>) yamlRuleMap.get(statName);
             String timeString = (String) yamlStatMap.get("time");
-            Matcher matcher = Pattern.compile("^(?<amount>\\d+)(?<timeScale>[M|w|d|h|m])$").matcher(timeString);
+            Matcher matcher = Pattern.compile("^(?<amount>\\d+)(?<timeScale>[Mwdhm])$").matcher(timeString);
             if (matcher.matches()) {
                 String timeScale = matcher.group("timeScale");
                 int amount = Integer.parseInt(matcher.group("amount"));
                 amount = changeTimeScale(amount, timeScale);
                 yamlStatMap.put("time", amount);
                 yamlRuleMap.put(statName, yamlStatMap);
-            } else throw new Exception("Malformed Yaml Rule time : " + timeString);;
+            } else throw new Exception("Malformed Yaml Rule time : " + timeString);
         }
         return yamlRuleMap;
     }
@@ -52,10 +51,6 @@ public class YamlRuleParser implements RuleParser{
         return coef * amount;
     }
 
-    @Override
-    public String getReferencePrice(Object rule) {
-        return null;
-    }
 
     @Override
     public Object getRuleByName(Object rules, String ruleName) {
