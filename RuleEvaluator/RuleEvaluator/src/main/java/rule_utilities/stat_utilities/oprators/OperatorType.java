@@ -1,4 +1,4 @@
-package stat_utilities.oprators;
+package rule_utilities.stat_utilities.oprators;
 
 public enum OperatorType {
     MOVING_AVERAGE("mean"),

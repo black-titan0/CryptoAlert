@@ -8,7 +8,6 @@ import rule_utilities.*;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -43,7 +42,7 @@ public class DataRepoProcedure implements ConsumeProcedure {
             Map<String, Object> rule = (Map<String, Object>) ruleParser.getRuleByName(ruleMaps, ruleName);
             try {
                 Map<String, Object> adjustedRule = (Map<String, Object>) ruleParser.adjustTimeScales(rule);
-                CryptoRule cryptoRule = new CryptoRule(adjustedRule);
+                CryptoRule cryptoRule = new CryptoRule(adjustedRule, ruleName);
                 rules.add(cryptoRule);
                 consumer.subscribeToTopic();
                 while (running) {
@@ -52,6 +51,7 @@ public class DataRepoProcedure implements ConsumeProcedure {
                         Candlestick candlestick = gson.fromJson(record.value().toString(), Candlestick.class);
                         for (CryptoRule cr:rules) {
                             cr.considerNewRecord(candlestick);
+                            cr.evaluateRule();
                         }
                     }
                     consumer.sync();
