@@ -17,7 +17,7 @@ public class YamlRuleParser implements RuleParser{
     public Object adjustTimeScales(Object rule) throws Exception {
         Map<String, Object> yamlRuleMap = ((Map<String, Object> ) rule);
         for (String statName : yamlRuleMap.keySet()) {
-            if (!statName.startsWith("stat"))
+            if (!statName.startsWith("stat_utilities"))
                 continue;
             Map<String, Object> yamlStatMap = (Map<String, Object>) yamlRuleMap.get(statName);
             String timeString = (String) yamlStatMap.get("time");
