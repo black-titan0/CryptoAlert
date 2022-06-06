@@ -2,6 +2,9 @@ import data_scanner.BinanceDataScanner;
 import data_scanner.DataScanner;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.List;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class DataScannerTests {
@@ -16,9 +19,11 @@ public void configurationTest() {
     assertThat(binanceDataScanner.getRestClient()).isNotNull();
 }
 @Test
-public void scanDataTest() {
+public void scanDataTest() throws Exception {
         dataScanner.configure();
         BinanceDataScanner binanceDataScanner = ((BinanceDataScanner) dataScanner);
-        assertThat(binanceDataScanner.scanData());
+    HashMap<String, List<Object>> stringListHashMap = binanceDataScanner.scanData();
+
+    assertThat(stringListHashMap.keySet().toArray()).isEqualTo(((BinanceDataScanner) dataScanner).getMarkets().toArray());
     }
 }

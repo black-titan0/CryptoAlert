@@ -34,6 +34,9 @@ public class BinanceDataScanner implements DataScanner{
          markets = Arrays.asList(marketNames);
     }
 
+    public List<String> getMarkets() {
+        return markets;
+    }
 
     @Override
     public HashMap<String, List<Object>> scanData() throws Exception {
