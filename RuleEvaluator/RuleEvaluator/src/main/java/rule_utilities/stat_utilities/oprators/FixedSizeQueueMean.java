@@ -14,7 +14,7 @@ public class FixedSizeQueueMean implements Operator {
         try {
             if (popped == null)
                 return (fixedSizeQueueStat.getStatValue() + fixedSizeQueueStat.getCandleValueByRef(candles.get(size - 1))) / size;
-            return (fixedSizeQueueStat.getStatValue()
+            return (fixedSizeQueueStat.getStatValue() * (size - 1)
                     + fixedSizeQueueStat.getCandleValueByRef(candles.get(size - 1))
                     - fixedSizeQueueStat.getCandleValueByRef(popped)
             ) / size;
