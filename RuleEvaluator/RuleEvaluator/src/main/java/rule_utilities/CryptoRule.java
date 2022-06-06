@@ -1,5 +1,6 @@
 package rule_utilities;
 
+import alerts.Alert;
 import com.binance.api.client.domain.market.Candlestick;
 import rule_utilities.stat_utilities.FixedSizeQueueStat;
 import rule_utilities.stat_utilities.Stat;
@@ -7,16 +8,19 @@ import rule_utilities.stat_utilities.conditions.BinaryCondition;
 import rule_utilities.stat_utilities.conditions.RuleCondition;
 import rule_utilities.stat_utilities.oprators.OperatorType;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CryptoRule {
 
     private final HashMap<String, Stat> stats = new HashMap<>();
+    private final String marketName;
     private RuleCondition ruleCondition;
 
     private String name;
-    public CryptoRule(Map<String, Object> ruleMap, String ruleName) throws Exception {
+    public CryptoRule(Map<String, Object> ruleMap, String ruleName, String marketName) throws Exception {
+        this.marketName = marketName;
         for (String statName : ruleMap.keySet()) {
             if (statName.startsWith("cond")) {
                 String condString = (String) ruleMap.get(statName);
@@ -42,6 +46,7 @@ public class CryptoRule {
 
     public void evaluateRule() {
         if (ruleCondition.isConditionMet()){
+            new Alert(LocalDateTime.now(), name, marketName);
             System.out.println("Condition Met " + name);
         }
     }

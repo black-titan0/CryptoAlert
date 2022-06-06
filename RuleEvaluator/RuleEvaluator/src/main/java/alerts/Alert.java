@@ -1,3 +1,5 @@
+package alerts;
+
 import java.time.LocalDateTime;
 
 public class Alert {
@@ -6,6 +8,12 @@ public class Alert {
     public LocalDateTime time;
     public String name;
     public String marketName;
+
+    public Alert(LocalDateTime time, String name, String marketName) {
+        this.time = time;
+        this.name = name;
+        this.marketName = marketName;
+    }
 
     public int getId() {
         return id;

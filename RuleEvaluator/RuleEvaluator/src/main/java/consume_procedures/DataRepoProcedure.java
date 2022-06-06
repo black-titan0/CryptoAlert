@@ -2,6 +2,7 @@ package consume_procedures;
 
 import com.binance.api.client.domain.market.Candlestick;
 import com.google.gson.Gson;
+import database_utilities.DatabaseConnection;
 import kafka_utilities.CandleConsumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import rule_utilities.*;
@@ -10,6 +11,7 @@ import rule_utilities.read_parse.RuleReader;
 import rule_utilities.read_parse.YamlRuleParser;
 import rule_utilities.read_parse.YamlRuleReader;
 
+import java.sql.Connection;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +23,18 @@ public class DataRepoProcedure implements ConsumeProcedure {
     private String target;
     private boolean running = true;
 
+    private DatabaseConnection connection;
+
     @Override
     public ConsumeProcedure introduceConsumer(CandleConsumer consumer, String targetMarket) {
         this.consumer = consumer;
         target = targetMarket;
+        return this;
+    }
+
+    @Override
+    public ConsumeProcedure introduceDatabaseConnection(DatabaseConnection connection) {
+        this.connection = connection;
         return this;
     }
 
@@ -46,7 +56,7 @@ public class DataRepoProcedure implements ConsumeProcedure {
             Map<String, Object> rule = (Map<String, Object>) ruleParser.getRuleByName(ruleMaps, ruleName);
             try {
                 Map<String, Object> adjustedRule = (Map<String, Object>) ruleParser.adjustTimeScales(rule);
-                CryptoRule cryptoRule = new CryptoRule(adjustedRule, ruleName);
+                CryptoRule cryptoRule = new CryptoRule(adjustedRule, ruleName, target);
                 rules.add(cryptoRule);
                 consumer.subscribeToTopic();
                 while (running) {
