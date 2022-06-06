@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb8e84ed-a84a-4ecd-a7c0-984dcf96fc83" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fb8e84ed-a84a-4ecd-a7c0-984dcf96fc83" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +72,7 @@
       <workItem from="1654242157112" duration="4401000" />
       <workItem from="1654331323384" duration="696000" />
       <workItem from="1654343039621" duration="878000" />
-      <workItem from="1654494159208" duration="767000" />
+      <workItem from="1654494159208" duration="1001000" />
     </task>
     <servers />
   </component>
