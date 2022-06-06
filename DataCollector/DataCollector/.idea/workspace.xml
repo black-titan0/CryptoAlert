@@ -44,7 +44,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.DataScannerTests.configurationTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DataCollector" />
@@ -52,8 +52,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DataScannerTests.configurationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DataCollector" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DataScannerTests" />
+      <option name="METHOD_NAME" value="configurationTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataScannerTests.configurationTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -73,6 +84,7 @@
       <workItem from="1654331323384" duration="696000" />
       <workItem from="1654343039621" duration="878000" />
       <workItem from="1654494159208" duration="1001000" />
+      <workItem from="1654505915835" duration="2005000" />
     </task>
     <servers />
   </component>

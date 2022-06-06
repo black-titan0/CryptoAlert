@@ -9,4 +9,5 @@ public interface DataScanner {
     HashMap<String, List<Object>> scanData() throws Exception;
 
     void waitForNextRequestMoment() throws InterruptedException;
+
 }

@@ -26,7 +26,9 @@ public class BinanceDataScanner implements DataScanner{
     }
 
 
-
+    public BinanceApiRestClient getRestClient() {
+        return restClient;
+    }
 
     private void setMarkets(String[] marketNames) {
          markets = Arrays.asList(marketNames);
