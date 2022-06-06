@@ -1,10 +1,14 @@
 package com.cryptoAlert.backend.alerts;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "alerts")
 public class Alert {
 
-    public int id;
+    @Id
+    public Long id;
     public LocalDateTime time;
     public String name;
     public String marketName;
@@ -15,11 +19,15 @@ public class Alert {
         this.marketName = marketName;
     }
 
-    public int getId() {
+    public Alert() {
+
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
