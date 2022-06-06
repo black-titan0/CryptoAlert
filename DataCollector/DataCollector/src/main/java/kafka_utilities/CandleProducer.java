@@ -2,6 +2,7 @@ package kafka_utilities;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Properties;
@@ -25,7 +26,7 @@ public class CandleProducer {
     public void publishMultipleCandles(String topic, List<String> candleData){
         for (String datum : candleData) {
             publishCandle(topic, datum);
-            System.out.println(datum);
+            LoggerFactory.getLogger(this.getClass()).info("\n new candle incoming : \n" + datum);
         }
     }
 }
