@@ -5,6 +5,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.TopicPartition;
 
+import javax.management.InstanceAlreadyExistsException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
@@ -16,7 +17,7 @@ public class CandleConsumer {
     String topic;
     public CandleConsumer(String clientId, String host, String group, int port, String topic)  {
         Properties config = new Properties();
-        config.put("client.id", clientId);
+        config.put("client.id", clientId + topic);
         config.put("group.id", group);
         config.put("bootstrap.servers", host + ":" + port);
         config.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");

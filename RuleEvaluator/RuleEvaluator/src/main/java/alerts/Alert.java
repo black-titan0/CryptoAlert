@@ -46,4 +46,14 @@ public class Alert {
     public void setMarketName(String marketName) {
         this.marketName = marketName;
     }
+
+    @Override
+    public String toString() {
+        return "Alert{" +
+                "id=" + id +
+                ", time=" + time +
+                ", name='" + name + '\'' +
+                ", marketName='" + marketName + '\'' +
+                '}';
+    }
 }

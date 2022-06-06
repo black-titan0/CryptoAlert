@@ -2,6 +2,7 @@ package rule_utilities;
 
 import alerts.Alert;
 import com.binance.api.client.domain.market.Candlestick;
+import org.slf4j.LoggerFactory;
 import rule_utilities.stat_utilities.FixedSizeQueueStat;
 import rule_utilities.stat_utilities.Stat;
 import rule_utilities.stat_utilities.conditions.BinaryCondition;
@@ -40,15 +41,17 @@ public class CryptoRule {
     public void considerNewRecord(Candlestick newCandle) {
         for (Stat stat:stats.values()) {
             stat.addCandleRecord(newCandle);
-            System.out.println("new candle in " + name + " : " + newCandle.toString());
+            LoggerFactory.getLogger(this.getClass()).info("\n new candle in " + name + " : " + newCandle.toString());
         }
     }
 
-    public void evaluateRule() {
+    public Object evaluateRule() {
         if (ruleCondition.isConditionMet()){
-            new Alert(LocalDateTime.now(), name, marketName);
-            System.out.println("Condition Met " + name);
+            Alert alert = new Alert(LocalDateTime.now(), name, marketName);
+            LoggerFactory.getLogger(this.getClass()).info("Condition Met " + name);
+            return alert;
         }
+        return null;
     }
 
     public Stat getStatByName(String name) {

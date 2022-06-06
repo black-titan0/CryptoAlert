@@ -17,7 +17,7 @@ public class BinaryCondition implements RuleCondition {
 
     @Override
     public RuleCondition configureCondition(String stringCondition) throws Exception {
-        Matcher matcher = Pattern.compile("^(?<one>\\w+)(\\s+)?(?<op>[><=]+)(\\s+)?(?<two>\\w+)$").matcher(stringCondition);
+        Matcher matcher = Pattern.compile("^(?<one>\\w+)(\\s+)?(?<op>[!><=]+)(\\s+)?(?<two>\\w+)$").matcher(stringCondition);
         if (matcher.matches()) {
             op = matcher.group("op");
             firstOperandName = matcher.group("one");
@@ -49,6 +49,8 @@ public class BinaryCondition implements RuleCondition {
                 return firstOperand.getValue() >= secondOperand.getValue();
             case "<=":
                 return firstOperand.getValue() <= secondOperand.getValue();
+            case "!=":
+                return firstOperand.getValue() != secondOperand.getValue();
         }
         return false;
     }

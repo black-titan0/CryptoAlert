@@ -6,6 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="fb8e84ed-a84a-4ecd-a7c0-984dcf96fc83" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/EvaluatorRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/EvaluatorRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/alerts/Alert.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/alerts/Alert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/consume_procedures/DataRepoProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/consume_procedures/DataRepoProcedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/database_utilities/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/database_utilities/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/kafka_utilities/CandleConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/kafka_utilities/CandleConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/rule_utilities/CryptoRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/rule_utilities/CryptoRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/rule_utilities/stat_utilities/conditions/BinaryCondition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/rule_utilities/stat_utilities/conditions/BinaryCondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/rule_utilities/stat_utilities/oprators/FixedSizeQueueMean.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/java/rule_utilities/stat_utilities/oprators/FixedSizeQueueMean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/resources/rules/ETHBTC-rules.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../RuleEvaluator/RuleEvaluator/src/main/resources/rules/ETHBTC-rules.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +84,7 @@
       <workItem from="1654242157112" duration="4401000" />
       <workItem from="1654331323384" duration="696000" />
       <workItem from="1654343039621" duration="878000" />
+      <workItem from="1654494159208" duration="713000" />
     </task>
     <servers />
   </component>

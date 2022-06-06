@@ -1,10 +1,12 @@
 package consume_procedures;
 
+import alerts.Alert;
 import com.binance.api.client.domain.market.Candlestick;
 import com.google.gson.Gson;
 import database_utilities.DatabaseConnection;
 import kafka_utilities.CandleConsumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.slf4j.LoggerFactory;
 import rule_utilities.*;
 import rule_utilities.read_parse.RuleParser;
 import rule_utilities.read_parse.RuleReader;
@@ -45,7 +47,7 @@ public class DataRepoProcedure implements ConsumeProcedure {
 
     @Override
     public void run() {
-        System.out.println("New DataRepoProcedure Started For Market " + target);
+        LoggerFactory.getLogger(this.getClass()).info("New DataRepoProcedure Started For Market " + target);
         Gson gson = new Gson();
         RuleReader ruleReader = new YamlRuleReader();
         RuleParser ruleParser = new YamlRuleParser();
@@ -65,7 +67,9 @@ public class DataRepoProcedure implements ConsumeProcedure {
                         Candlestick candlestick = gson.fromJson(record.value().toString(), Candlestick.class);
                         for (CryptoRule cr:rules) {
                             cr.considerNewRecord(candlestick);
-                            cr.evaluateRule();
+                            var result = cr.evaluateRule();
+                            if (result instanceof Alert)
+                                connection.insertAlert((Alert) result);
                         }
                     }
                     consumer.sync();

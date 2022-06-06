@@ -5,6 +5,7 @@ import kafka_utilities.CandleConsumer;
 
 import properties_reader.PropertiesReader;
 
+import javax.management.InstanceAlreadyExistsException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.sql.Connection;
@@ -30,6 +31,7 @@ public class EvaluatorRunner {
                     .introduceConsumer(candleConsumer, marketName)
                     .introduceDatabaseConnection(dbConnection);
             new Thread(procedure).start();
+
         }
     }
 }

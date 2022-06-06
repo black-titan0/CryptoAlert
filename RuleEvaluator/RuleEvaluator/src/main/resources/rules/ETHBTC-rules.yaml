@@ -7,4 +7,4 @@ eth-rule1:
     ref: open
     time: 2m
     operator: mean
-  cond: stat1 < stat2
+  cond: stat1 != stat2
